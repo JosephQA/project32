@@ -73,15 +73,5 @@ public class Order_ {
 	public double getPrice() {
 		return price;
 	}
-<<<<<<< Updated upstream
-=======
-	public String toString() {
-		calcPrice();
-		String str =  "Order :"+getOrderId()+" Customer :"+getCustId()+" Cost: "+getPrice()+"\n";
-			for(int i = 0 ;i < lines.size();  i++) {
-				str = str +"\t" +lines.get(i).toString()+"\n";
-			}
-			return str;
-		}	
->>>>>>> Stashed changes
+
 }
