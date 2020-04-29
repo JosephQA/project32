@@ -10,7 +10,7 @@ import org.junit.Test;
 import InitClass.Factory;
 import enums.CustFields;
 
-public class Customer_HandlingTst {
+public class Customer_HandlingTst2 {
 	Database_handling dbh;
 	Customer_ tc1, tc2;
 	Customer_Handling csth;

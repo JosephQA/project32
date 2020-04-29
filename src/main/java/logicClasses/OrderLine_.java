@@ -1,5 +1,4 @@
 package logicClasses;
-
 import InitClass.Factory;
 
 public class OrderLine_ {
@@ -69,6 +68,7 @@ public class OrderLine_ {
 	public int getLineNo() {
 		return lineNo;
 	}
+	@Override
 	public String toString() {
 		String str = "Order: "+this.getOrderId()+
 					" Line: "+this.getLineNo() +" Item: "+this.getItemId()+

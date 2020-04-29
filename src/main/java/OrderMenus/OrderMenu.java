@@ -1,5 +1,4 @@
 package OrderMenus;
-
 import java.util.Scanner;
 
 import InitClass.HelloMenu;

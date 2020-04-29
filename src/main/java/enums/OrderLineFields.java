@@ -1,4 +1,4 @@
-package enums;
+ package enums;
 
 public enum OrderLineFields {
 	ID("orderId"),

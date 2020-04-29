@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import InitClass.Factory;
 
-public class Order_Tst {
+public class Order_Tst2 {
 	Order_ ordT;
 	Item_ itemT;
 	OrderLine_ lineT;

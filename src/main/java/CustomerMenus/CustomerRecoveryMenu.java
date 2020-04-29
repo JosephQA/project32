@@ -1,5 +1,4 @@
-package CustomerMenus;
-
+ 
 import java.util.Scanner;
 
 public class CustomerRecoveryMenu {

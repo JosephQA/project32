@@ -1,5 +1,4 @@
-package ItemMenus;
-
+ package  ItemMenus;
 import java.util.Scanner;
 
 public class ItemCreationMenuHandling {

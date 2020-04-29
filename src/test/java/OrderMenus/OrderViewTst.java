@@ -1,13 +1,35 @@
 package OrderMenus;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.powermock.api.mockito.PowerMockito;
+
+import InitClass.Factory;
+import InitClass.ScannerHandling;
+import logicClasses.OrderLine_;
+import logicClasses.OrderLine_handling;
+import logicClasses.Order_;
+import logicClasses.Order_Handling;
+import OrderMenus.OrderMenu;
+import OrderMenus.OrderViewMenu;
+import OrderMenus.OrderViewMenuHandling;
+
 public class OrderViewTst {
 	Order_Handling ordhM = mock(Order_Handling.class);
 	OrderLine_handling linhM = mock(OrderLine_handling.class);
 	OrderViewMenu ordVM = mock(OrderViewMenu.class);
 
 	OrderMenu ordM = mock(OrderMenu.class);
-	OrderViewMenu ordV = new OrderViewMenu(ScannerHandling.getScanner(), ordM);
-	OrderViewMenuHandling ordvmh = new OrderViewMenuHandling(ScannerHandling.getScanner(), ordVM);
+	OrderViewMenuHandling ordV = new OrderViewMenuHandling(ScannerHandling.getScanner(), ordM);
+	main.java.OrderMenus.OrderViewMenuHandling2 ordvmh = new OrderViewMenuHandling(ScannerHandling.getScanner(), ordVM);
 	Factory factM = mock(Factory.class);
 	ArrayList<Order_> orderList = new ArrayList<Order_>();
 	ArrayList<OrderLine_> lineList = new ArrayList<OrderLine_>();
@@ -47,6 +69,9 @@ public class OrderViewTst {
 
 	@Test
 	public void handleviewall() {
+		System.out.println("b");
+		PowerMockito.mockStatic(Factory.class );
+		PowerMockito.when(Factory.getOrderlinehandler()).thenReturn(linhM);
 		System.out.println("b");
 		when(Factory.getOrderHandler()).thenReturn(mock(Order_Handling.class));
 		System.out.println("b");

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import InitClass.Factory;
 
-public class OrderLine_HandlerTst {
+public class OrderLine_HandlerTst2 {
 	OrderLine_handling olh;
 	Database_handling dbh;
 	OrderLine_ line = new OrderLine_(101, 1, 101, 12);

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import InitClass.Factory;
 
-public class DbHandlerOrderTst {
+public class DbHandlerOrderTst2 {
 	Database_handling dbh;
 	@Before
 	public void seup() {

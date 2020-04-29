@@ -1,5 +1,4 @@
-package enums;
-
+ package enums;
 public enum OrderFields {
 	ORDERID("orderID"),
 	CUSTID("customer");

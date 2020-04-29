@@ -49,7 +49,7 @@ public class Database_ {
 					scanIn.nextLine());
 			stmnt = conn.createStatement();
 			if (conn != null) {
-				dm = (DatabaseMetaData) conn.getMetaData();
+				dm = conn.getMetaData();
 				System.out.println("Driver name: " + dm.getDriverName());
 				System.out.println("Driver version: " + dm.getDriverVersion());
 				System.out.println("Product name: " + dm.getDatabaseProductName());
@@ -76,7 +76,7 @@ public class Database_ {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + suffix, "root", "root");
 			stmnt = conn.createStatement();
 			if (conn != null) {
-				dm = (DatabaseMetaData) conn.getMetaData();
+				dm = conn.getMetaData();
 				System.out.println("Driver name: " + dm.getDriverName());
 				System.out.println("Driver version: " + dm.getDriverVersion());
 				System.out.println("Product name: " + dm.getDatabaseProductName());
@@ -592,7 +592,7 @@ public class Database_ {
 	public boolean checkConnection() {
 		// check connection here
 		try {
-			dm = (DatabaseMetaData) conn.getMetaData();
+			dm = conn.getMetaData();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;

@@ -9,7 +9,7 @@ import org.junit.Test;
 import InitClass.Factory;
 import enums.ProductFields;
 
-public class DbHandlerItemTst {
+public class DbHandlerItemTst2 {
 
 	Database_handling dbh;
 	@Before

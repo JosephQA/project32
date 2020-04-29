@@ -1,9 +1,5 @@
 package logicClasses;
 
-
-
-import javax.swing.text.DefaultEditorKit.CutAction;
-
 public class Customer_ {
 	private int id;
 	private String firstname,lastname, email;

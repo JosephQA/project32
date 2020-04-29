@@ -13,7 +13,7 @@ import org.junit.Test;
 import InitClass.Factory;
 import enums.CustFields;
 
-public class DbHandlerCustTst {
+public class DbHandlerCustTst2 {
 	
 	// Database_ mdb;
 	

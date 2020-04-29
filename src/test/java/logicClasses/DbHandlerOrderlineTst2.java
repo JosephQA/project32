@@ -10,7 +10,7 @@ import InitClass.Factory;
 import enums.OrderLineFields;
 
 
-public class DbHandlerOrderlineTst {
+public class DbHandlerOrderlineTst2 {
 	Database_handling dbh;
 	@Before
 	public void seup() {
