@@ -10,13 +10,13 @@ import InitClass.Factory;
 import enums.ProductFields;
 
 public class DbHandlerItemTst {
-
+	Factory f  = new Factory();
 	Database_handling dbh;
 	@Before
 	public void seup() {
-	System.out.println("_________setup____________");
-	dbh = Factory.getDatabaseHandling("test");
-	System.out.println("check "+ !(null == dbh));
+		System.out.println("_________setup____________");
+		dbh = f.getDatabaseHandling("test");
+		System.out.println("check "+ !(null == dbh));
 	Database_ db = dbh.getDatabase();
 	System.out.println(db.suffix);
 	dbh.createFullItem(101, "qqq", 87, 10.50);

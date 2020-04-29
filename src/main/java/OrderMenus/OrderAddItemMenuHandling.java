@@ -10,7 +10,7 @@ import logicClasses.Order_Handling;
 public class OrderAddItemMenuHandling {
 	Scanner scan;
 	OrderAddItemMenu upmenu;
-
+Factory f = new Factory();
 	OrderAddItemMenuHandling(Scanner scanIn, OrderAddItemMenu obj) {
 		scan = scanIn;
 		upmenu = obj;
@@ -30,11 +30,11 @@ public class OrderAddItemMenuHandling {
 		}
 	}
 	protected Order_  orderInit(int intput) {
-		Order_ ordo = Factory.getOrderHandler().getOrderbyId(intput);
+		Order_ ordo = f.getOrderHandler().getOrderbyId(intput);
 		return ordo;
 	}
 	protected boolean addItemtoOrder(Order_ orderobj, int ItemId, int ItemAmo) {
-		OrderLine_handling linehan = Factory.getOrderlinehandler();
+		OrderLine_handling linehan = f.getOrderlinehandler();
 //		return true if line return is not null (line created)
 		return ( linehan.createLine(orderobj.getOrderId(), ItemId, ItemAmo) != null);
 	}

@@ -12,6 +12,7 @@ public class Order_Tst {
 	Order_ ordT;
 	Item_ itemT;
 	OrderLine_ lineT;
+	Factory fact = new Factory();
 	@Before
 	public void befro() {
 		ordT = new Order_(0, 101);
@@ -39,7 +40,7 @@ public class Order_Tst {
 	}
 	@Test
 	public void calcprice() {
-		Database_handling dbh = Factory.getDatabaseHandling("test");
+		Database_handling dbh = fact.getDatabaseHandling("test");
 		dbh.createFullItem(itemT.getItemId(), itemT.getItemName(), itemT.getItemAmo(), itemT.getItemPrice());
 		
 		ordT.addOrderLine(lineT);

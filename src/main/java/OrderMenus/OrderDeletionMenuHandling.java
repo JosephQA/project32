@@ -8,7 +8,7 @@ import logicClasses.Order_Handling;
 public class OrderDeletionMenuHandling {
 	Scanner scan;
 	OrderDeletionMenu upmenu;
-
+	Factory f = new Factory();
 	public OrderDeletionMenuHandling(Scanner scanIn, OrderDeletionMenu obj) {
 		scan = scanIn;
 		upmenu = obj;
@@ -33,7 +33,7 @@ public class OrderDeletionMenuHandling {
 			//DB.deleteItem(intput) //check exists, then set isdeleted tru....
 			//syso(result of deletion);
 			//then
-			Order_Handling ordhan = Factory.getOrderHandler();
+			Order_Handling ordhan =  f.getOrderHandler();
 			if(ordhan.deleteOrder(intput)) {
 				System.out.println("order deleted ");
 			}else {

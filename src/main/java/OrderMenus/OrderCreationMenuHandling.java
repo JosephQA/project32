@@ -16,12 +16,12 @@ public class OrderCreationMenuHandling {
 	Order_ orderInProgress;
 	Order_Handling ordh;
 	OrderLine_handling linh;
-
+Factory f = new Factory();
 	public OrderCreationMenuHandling(Scanner scanIn, OrderCreationMenu obj) {
 		scan = scanIn;
 		upmenu = obj;
-		ordh = Factory.getOrderHandler();
-		linh = Factory.getOrderlinehandler();
+		ordh = f.getOrderHandler();
+		linh = f.getOrderlinehandler();
 	}
 
 	void handleMenuInput(int intput) {
@@ -52,7 +52,7 @@ public class OrderCreationMenuHandling {
 		// // false msg+="only "+DB.getITemAmo(itemID)+" exist"
 		// syso(msg)
 		//
-		Item_Handling itemhan = Factory.getItemHandler();
+		Item_Handling itemhan = f.getItemHandler();
 		Item_ item = itemhan.getItembyID(itemID);
 		if (item.getItemAmo() > itemAmo) {
 			bool = true; //

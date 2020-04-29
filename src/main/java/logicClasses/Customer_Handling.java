@@ -7,11 +7,12 @@ import enums.CustFields;
 
 public class Customer_Handling {
 	private static Database_handling dbh;
+	Factory f = new Factory();
 	public Customer_Handling(){
-		dbh = Factory.getDatabaseHandling();
+		dbh = f.getDatabaseHandling();
 	}
 	protected Customer_Handling(String tst){
-		dbh = Factory.getDatabaseHandling(tst);
+		dbh = f.getDatabaseHandling(tst);
 	}
 	
 	public Customer_ createCust(Customer_ cust) {

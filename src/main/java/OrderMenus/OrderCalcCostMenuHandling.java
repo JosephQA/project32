@@ -15,7 +15,7 @@ public class OrderCalcCostMenuHandling {
 	Order_Handling ordhan;
 	OrderLine_handling linhan;
 	double pricer;
-
+Factory f = new Factory();
 	public OrderCalcCostMenuHandling(Scanner scanIn, OrderCalcCostMenu obj) {
 		// TODO Auto-generated constructor stub
 		scan = scanIn;
@@ -24,7 +24,7 @@ public class OrderCalcCostMenuHandling {
 
 	protected Order_ handleMenuIntput(int intput) {
 		Order_ retOrder;
-		ordhan = Factory.getOrderHandler();
+		ordhan = f.getOrderHandler();
 		if (intput != -0) {
 			// actually DB.getOrder(orderID) //syso(no order found on fail?? and return null
 
@@ -42,7 +42,7 @@ public class OrderCalcCostMenuHandling {
 		// int cost = order.calcCost();
 		// retCost += cost;
 		pricer = 0;
-		linhan = Factory.getOrderlinehandler();
+		linhan = f.getOrderlinehandler();
 		ArrayList<OrderLine_> list = linhan.getLinesbyOrder(order.getOrderId());
 		list.forEach(ele -> {
 			pricer = pricer + linhan.getLinePrice(ele);

@@ -12,10 +12,12 @@ public class CustomerChangeMenuHandling {
 	CustomerMenu upmenu;
 	Customer_Handling csth;
 	Customer_ chan;
+	Factory f = new Factory();
+	
 	CustomerChangeMenuHandling(Scanner scanIn, CustomerMenu obj){
 		upmenu = obj;
 		scan = scanIn;
-		csth = Factory.getCustomerHandler();
+		csth = f.getCustomerHandler();
 	}
 	Customer_ handleMenuInputFetch(int intput){
 		

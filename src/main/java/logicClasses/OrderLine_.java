@@ -9,7 +9,7 @@ public class OrderLine_ {
 	private int itemAmo;
 	private double linePrice;
 	private String tst = "";
-
+Factory f = new Factory();
 	public OrderLine_(int orderID, int itemID, int itemAMO) {
 		orderId = orderID;
 		itemId = itemID;
@@ -62,7 +62,7 @@ public class OrderLine_ {
 	}
 
 	protected void setLinePrice() {
-		OrderLine_handling handler = Factory.getOrderlinehandler();
+		OrderLine_handling handler = f.getOrderlinehandler();
 		linePrice = handler.getLinePrice(this);
 	}
 

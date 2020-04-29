@@ -10,10 +10,11 @@ import InitClass.Factory;
 
 public class DbHandlerOrderTst {
 	Database_handling dbh;
+	Factory fact = new Factory();
 	@Before
 	public void seup() {
 	System.out.println("_________setup____________");
-	dbh = Factory.getDatabaseHandling("test");
+	dbh = fact.getDatabaseHandling("test");
 	System.out.println("check "+ !(null == dbh));
 	Database_ db = dbh.getDatabase();
 	System.out.println(db.suffix);

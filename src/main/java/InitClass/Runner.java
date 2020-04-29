@@ -9,7 +9,8 @@ public class Runner {
 
 	public static void main(String[] args) {
 		Scanner scan = ScannerHandling.getScanner();
-		 Database_ db = Factory.getDatabase_();
+		Factory f = new Factory();
+		 Database_ db = f.getDatabase_();
 //		 Database_ db = new Database_(scan);
 //		db .checkConnection();
 		HelloMenu hi = new HelloMenu(scan);

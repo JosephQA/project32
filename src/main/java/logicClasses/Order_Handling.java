@@ -6,11 +6,17 @@ import InitClass.Factory;
 
 public class Order_Handling {
 	private static Database_handling dbh;
-
+Factory f;
 	public Order_Handling() {
-		dbh = Factory.getDatabaseHandling("");
+		init();
+		f = Factory.getFactory();
+//		System.out.println("+++TEST+++");
+		dbh = f.getDatabaseHandling(""); 
+//		System.out.println("-TEST-");
 	}
-
+	public boolean init() {
+		return true;
+	}
 	public boolean createOrderInDB(Order_ ord) {
 		return dbh.createOrder(ord);
 	}
