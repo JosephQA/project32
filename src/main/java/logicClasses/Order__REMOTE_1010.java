@@ -73,8 +73,6 @@ public class Order_ {
 	public double getPrice() {
 		return price;
 	}
-<<<<<<< Updated upstream
-=======
 	public String toString() {
 		calcPrice();
 		String str =  "Order :"+getOrderId()+" Customer :"+getCustId()+" Cost: "+getPrice()+"\n";
@@ -83,5 +81,4 @@ public class Order_ {
 			}
 			return str;
 		}	
->>>>>>> Stashed changes
 }

@@ -62,11 +62,17 @@ public class OrderLine_ {
 	}
 
 	protected void setLinePrice() {
-		OrderLine_handling handler = Factory.getOrderlinehandler(tst);
+		OrderLine_handling handler = Factory.getOrderlinehandler();
 		linePrice = handler.getLinePrice(this);
 	}
 
 	public int getLineNo() {
 		return lineNo;
 	}
+	public String toString() {
+		String str = "Order: "+this.getOrderId()+
+					" Line: "+this.getLineNo() +" Item: "+this.getItemId()+
+					" Amount: "+this.getItemAmo();
+		return str;
+					}
 }
