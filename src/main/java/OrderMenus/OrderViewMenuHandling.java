@@ -34,7 +34,7 @@ public class OrderViewMenuHandling {
 			break;
 		};
 	}	
-	String handleViewOne(int orderID) {
+	protected String handleViewOne(int orderID) {
 		String retStr = "";
 		//do some shit
 		//fetch item from DB attempt. success str+=item.toString. fail "item  not found"
@@ -48,7 +48,7 @@ public class OrderViewMenuHandling {
 		return retStr;
 		
 	}
-	ArrayList<String> viewAll(){
+	protected ArrayList<String> viewAll(){
 		ArrayList<String> retArr = new ArrayList<String>();
 		//fetch item....stream? from DB, for each item add item.toString to retArr
 		Order_Handling ordhan = Factory.getOrderHandler();
