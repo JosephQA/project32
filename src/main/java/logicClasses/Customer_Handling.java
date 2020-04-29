@@ -8,18 +8,22 @@ import enums.CustFields;
 public class Customer_Handling {
 	private static Database_handling dbh;
 	public Customer_Handling(){
-		dbh = Factory.getDatabaseHandling("");
+		dbh = Factory.getDatabaseHandling();
 	}
+	protected Customer_Handling(String tst){
+		dbh = Factory.getDatabaseHandling(tst);
+	}
+	
 	public Customer_ createCust(Customer_ cust) {
-		 dbh.createCust(cust.getFirstname(), cust.getLastname(), cust.getEmail());
+		 dbh.createCust(cust.getId(),cust.getFirstname(), cust.getLastname(), cust.getEmail());
 		int custId = dbh.getCustId(cust.getFirstname(),cust.getLastname(), cust.getEmail());
 		Customer_ custer = new Customer_(custId, cust.getFirstname(), cust.getLastname(), cust.getEmail()/* cust vars */);
 		return custer;
 	}
-	public Customer_ createCust(String name1, String name2, String email) {
+	public Customer_ createCust(int id,String name1, String name2, String email) {
 		// current just treat as new add to db, then fetch id generated to create cust
 		// object
-		dbh.createCust(name1, name2, email);
+		dbh.createCust(id, name1, name2, email);
 		int custId = dbh.getCustId(name1, name2, email);
 		Customer_ custer = new Customer_(custId, name1, name2, email/* cust vars */);
 		return custer;

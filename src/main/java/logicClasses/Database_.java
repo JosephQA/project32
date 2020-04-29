@@ -301,7 +301,7 @@ public class Database_ {
 		try {// adding cust
 			String qry = "delete from " + TableNames.CUSTOMERS.getFeild() + " where " + CustFields.ID.getFeild() + " = "
 					+ id + ";";
-			System.out.println(qry);
+			//System.out.println(qry);
 			return execute(qry);
 		} catch (Exception e) {
 			return false;
@@ -461,6 +461,7 @@ public class Database_ {
 	private String sneakyCheck(String value) {
 		try {
 			Integer.parseInt(value);
+			
 			return value;
 		} catch (Exception e) {
 			// do nothing
@@ -474,13 +475,13 @@ public class Database_ {
 
 		}
 
-		return "'" + value + "'";
+		return "\"" + value + "\"";
 	}
 
 	// select int from table
 	protected int selectInt(String qry, String col) {
 		ResultSet rs;// = executeQuery(qry);
-
+		System.out.println("++TEST++"+qry);
 		int result;
 		try {
 			rs = executeQuery(qry);

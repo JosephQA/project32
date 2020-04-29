@@ -32,10 +32,10 @@ public class DbHandlerOrderlineTst {
 	public void Tdown() {
 		System.out.println("___TDOWN____");
 		
-		boolean bool2 = dbh.deleteOrder(101);
-		boolean bool1 = dbh.deleteCust(101);
-		boolean bool3 = dbh.deleteItem(101);
-		boolean bool4 = dbh.deleteItem(102);
+		dbh.deleteOrder(101);
+		dbh.deleteCust(101);
+		dbh.deleteItem(101);
+		dbh.deleteItem(102);
 		 System.out.println("________________________________");
 	}
 	@Test
