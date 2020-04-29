@@ -73,5 +73,4 @@ public class Order_ {
 	public double getPrice() {
 		return price;
 	}
-
 }

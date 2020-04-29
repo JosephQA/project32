@@ -73,5 +73,8 @@ public class Order_ {
 	public double getPrice() {
 		return price;
 	}
-
+	public String toString() {
+		calcPrice();
+		return "Order :"+getOrderId()+" Customer :"+getCustId()+" Cost: "+getPrice()+"\n";
+	}
 }
