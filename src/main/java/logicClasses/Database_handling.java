@@ -66,6 +66,8 @@ public class Database_handling {
 
 	protected int getCustId(String name1, String name2, String email) {
 		//db = getDatabase();
+		name2 = "\""+name2+"\"";
+		name1 = "\""+name1+"\"";
 		String qry = "select " + CustFields.ID.getFeild() + " from " + TableNames.CUSTOMERS.getFeild() + " where "
 				+ CustFields.NAME1.getFeild() + " = " + name1 + " and " + CustFields.NAME2.getFeild() + " = " + name2
 				+ ";";
@@ -76,10 +78,13 @@ public class Database_handling {
 	protected boolean deleteCust(Customer_ cust) {
 		//db = getDatabase();
 		// dont trust local ID's
-		String qry = "delete from " + TableNames.CUSTOMERS.getFeild() + " where " + CustFields.NAME1.getFeild() + " = "
-				+ cust.getFirstname() + " and " + CustFields.NAME2.getFeild() + " = " + cust.getLastname() + " and "
-				+ CustFields.EMAIL.getFeild() + " = " + cust.getEmail() + ";";
-		System.out.println(qry);
+//		String qry = "delete from " + TableNames.CUSTOMERS.getFeild() + " where " + CustFields.NAME1.getFeild() + " = \""
+//				+ cust.getFirstname() + "\" and " + CustFields.NAME2.getFeild() + " = \"" + cust.getLastname() + "\" and "
+//				+ CustFields.EMAIL.getFeild() + " = \"" + cust.getEmail() + "\";";
+//		System.out.println(qry);
+		String qry = "select "+CustFields.ID.getFeild()+" from "+TableNames.CUSTOMERS.getFeild()+" where " + CustFields.NAME1.getFeild() + " = \""
+				+ cust.getFirstname() + "\" and " + CustFields.NAME2.getFeild() + " = \"" + cust.getLastname() + "\" and "
+				+ CustFields.EMAIL.getFeild() + " = \"" + cust.getEmail() + "\";";
 		int id = db.selectInt(qry, CustFields.ID.getFeild());
 		return deleteCust(id);
 	}

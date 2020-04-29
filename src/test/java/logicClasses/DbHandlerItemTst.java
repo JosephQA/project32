@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import InitClass.Factory;
-import enums.CustFields;
 import enums.ProductFields;
 
 public class DbHandlerItemTst {
