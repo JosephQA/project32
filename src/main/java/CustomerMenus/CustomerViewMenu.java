@@ -10,7 +10,7 @@ public class CustomerViewMenu {
 	public CustomerViewMenu(Scanner scanIn, CustomerMenu obj) {
 		scan = scanIn;
 		upmenu = obj;
-		handler = new CustomerViewMenuHandling(scan, upmenu); 
+		handler = new CustomerViewMenuHandling(scan,this); 
 		// TODO Auto-generated constructor stub
 	}
 	void startViewing() {
@@ -24,6 +24,10 @@ public class CustomerViewMenu {
 		System.out.println(msg);
 		int choice = scan.nextInt();
 		handler.handleMenuInput(choice,this);
+	}
+	public void success(String stri) {
+		System.out.println(stri);
+		
 	}			
 
 }

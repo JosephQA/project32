@@ -7,16 +7,19 @@ public class Item_ {
 	private int ItemAmo;
 	private double itemPrice;
 
-	public Item_() {
-		// TODO Auto-generated constructor stub
-	}
-
-	protected Item_(String ItemNameIn, int itemIdIn, int ItemAmoIn, double itemPriceIn) {
+	public Item_(String ItemNameIn, int itemIdIn, int ItemAmoIn, double itemPriceIn) {
 		ItemName = ItemNameIn;
 		ItemId = itemIdIn;
 		ItemAmo = ItemAmoIn;
 		itemPrice = itemPriceIn;
 	}
+
+//	protected Item_(String ItemNameIn, int itemIdIn, int ItemAmoIn, double itemPriceIn) {
+//		ItemName = ItemNameIn;
+//		ItemId = itemIdIn;
+//		ItemAmo = ItemAmoIn;
+//		itemPrice = itemPriceIn;
+//	}
 
 	protected Item_(int ItemIdIn, String ItemNameIn, int itemIdIn, int ItemAmoIn, double itemPriceIn) {
 		itemId = itemIdIn;

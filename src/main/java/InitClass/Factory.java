@@ -28,6 +28,7 @@ public class Factory {
 			return olh;
 		} else {
 			olh = new OrderLine_handling();
+			
 			return olh;
 		}
 	}

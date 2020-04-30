@@ -26,5 +26,12 @@ public class ItemDeletionMenu {
 		int choice = scan.nextInt();
 		handler.handleDeleteing(choice);
 	}
+	public void success(int id) {
+		System.out.println("ITEM "+id+" DELETED");
+		
+	}
+	public void fail() {
+		System.out.println("DELETION FAILURE");
+	}
 
 }

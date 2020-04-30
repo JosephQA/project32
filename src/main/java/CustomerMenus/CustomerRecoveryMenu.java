@@ -18,7 +18,7 @@ public class CustomerRecoveryMenu {
 				+ "for recovering deleted customers\n"
 				+ "enter number of option to continue\n"
 				+ "1 : recover a customer with customerID#"
-				+ "0 : return to customer menu";
+				+ "0 : return to customer menu"+"\nTHIS MENU NOT IMPLEMENTED";
 		System.out.println(msg);
 		int choice = scan.nextInt();
 		handler.handleMenuInput(choice);

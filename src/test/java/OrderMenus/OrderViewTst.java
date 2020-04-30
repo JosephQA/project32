@@ -8,10 +8,13 @@ import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentMatcher;
 import org.mockito.InjectMocks;
+import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.internal.matchers.Any;
 import org.mockito.internal.matchers.InstanceOf;
 import org.mockito.internal.stubbing.defaultanswers.ReturnsDeepStubs;
 
@@ -83,21 +86,27 @@ public class OrderViewTst {
 	@Test
 	public void handleviewone() {
 //		System.out.println("a");
-
+		OrderViewMenuHandling mockHand = Mockito.mock(OrderViewMenuHandling.class);
+		when(mockHand.gethead(anyInt())).thenReturn(o1);
+		when(mockHand.setuphandleviewone(anyInt())).thenReturn(lineList);
+		when(mockHand.handleViewOne(anyInt())).thenCallRealMethod();
+		//System.out.println(mockHand.handleViewOne(101));
+		assertTrue(36 < mockHand.handleViewOne(101).length());
+		
 		
 	}
 
 	@Test
 	public void handleviewall() {
-		System.out.println("b");
-
-//		System.out.println("b");
-//		when(Factory.getOrderlinehandler()).thenReturn(linhM);
-//		System.out.println("b");
-//		when(ordhM.getAllOrder()).thenReturn(orderList);
-//		System.out.println("b");
-//		assertEquals(2, ordvmh.viewAll().size());
-//		System.out.println("b");
+		OrderViewMenuHandling mockHand = Mockito.mock(OrderViewMenuHandling.class);
+		when(mockHand.getordhan()).thenReturn(Mockito.mock(Order_Handling.class));
+		when(mockHand.getlinhan()).thenReturn(Mockito.mock(OrderLine_handling.class));
+		when(mockHand.getordarr(Matchers.any(Order_Handling.class))).thenReturn(orderList);
+		when(mockHand.getlinarr(  Matchers.any(OrderLine_handling.class) , anyInt())).thenReturn(lineList).thenReturn(lineList);
+		when(mockHand.viewAll()).thenCallRealMethod();
+		ArrayList<String> strarr = new ArrayList<String>();
+		assert(strarr.getClass()== mockHand.viewAll().getClass() );
+		
 	}
 
 }

@@ -10,6 +10,8 @@ public class Item_Handling {
 	Factory f = new Factory();
 	public Item_Handling() {
 		dbh =f.getDatabaseHandling("");
+		
+		
 	}
 	public Item_Handling(String tst) {
 		dbh = f.getDatabaseHandling(tst);
@@ -37,5 +39,9 @@ public class Item_Handling {
 //DElete
 	public boolean deleteItem(int iD) {
 		return dbh.deleteItem(iD);
+	}
+	public ArrayList<Item_> getAllItems() {
+		
+		return dbh.getAllItems();
 	}
 }

@@ -11,6 +11,9 @@ public class Customer_ {
 		id= iD; setFirstname(name1); setLastname(name2); setEmail(emaill);
 		
 	}
+	public Customer_( String name1, String name2 ,String emaill ) {
+		setFirstname(name1); setLastname(name2); setEmail(emaill);
+	}
 	
 	
 	
@@ -37,6 +40,10 @@ public class Customer_ {
 	public int getId() {
 		return id;
 	}
-	
+	@Override
+	public String toString() {
+		String str = "ID: "+getId()+" NAME:"+getFirstname()+" "+getLastname()+" EMAIL"+getEmail()+"\n";
+		return str;
+	}
 
 }

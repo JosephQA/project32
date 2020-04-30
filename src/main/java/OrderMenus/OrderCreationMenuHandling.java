@@ -52,8 +52,7 @@ Factory f = new Factory();
 		// // false msg+="only "+DB.getITemAmo(itemID)+" exist"
 		// syso(msg)
 		//
-		Item_Handling itemhan = f.getItemHandler();
-		Item_ item = itemhan.getItembyID(itemID);
+		Item_ item = fetchitem(itemID);
 		if (item.getItemAmo() > itemAmo) {
 			bool = true; //
 
@@ -63,6 +62,11 @@ Factory f = new Factory();
 		}
 		return bool;
 
+	}
+	protected Item_ fetchitem(int itemID) {
+		Item_Handling itemhan = f.getItemHandler();
+		Item_ item = itemhan.getItembyID(itemID);
+		return item;
 	}
 
 	public String addItem(Order_ orderHead, int itemID, int itemAmo) {

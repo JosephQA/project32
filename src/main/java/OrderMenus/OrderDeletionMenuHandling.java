@@ -9,6 +9,7 @@ public class OrderDeletionMenuHandling {
 	Scanner scan;
 	OrderDeletionMenu upmenu;
 	Factory f = new Factory();
+
 	public OrderDeletionMenuHandling(Scanner scanIn, OrderDeletionMenu obj) {
 		scan = scanIn;
 		upmenu = obj;
@@ -28,19 +29,27 @@ public class OrderDeletionMenuHandling {
 			break;
 		}
 	}
-	protected void handleDeleteInput(int intput) {
-		if(intput != -0) {
-			//DB.deleteItem(intput) //check exists, then set isdeleted tru....
-			//syso(result of deletion);
-			//then
-			Order_Handling ordhan =  f.getOrderHandler();
-			if(ordhan.deleteOrder(intput)) {
+
+	protected boolean handleDeleteInput(int intput) {
+		if (intput != -0) {
+			// DB.deleteItem(intput) //check exists, then set isdeleted tru....
+			// syso(result of deletion);
+			// then
+			Order_Handling ordhan = f.getOrderHandler();
+			if (ordhan.deleteOrder(intput)) {
 				System.out.println("order deleted ");
-			}else {
+				upmenu.displayMenu();
+				return true;
+			} else {
 				System.out.println("order deletion failed");
+				upmenu.displayMenu();
+				return false;
 			}
+
+		} else {
 			upmenu.displayMenu();
-		}else {upmenu.displayMenu();}
-		
+			return true;
+		}
+
 	}
 }

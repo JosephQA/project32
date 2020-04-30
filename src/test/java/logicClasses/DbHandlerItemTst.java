@@ -52,4 +52,9 @@ public class DbHandlerItemTst {
 		assertEquals(true, dbh.deleteItem(101));
 		System.out.println("________________________________");
 	}
+	@Test public void getallitem() {
+		System.out.println("__________GET ALL ITEM___________");
+		assertEquals(1,dbh.getAllItems().size());
+		System.out.println("________________________________");
+	}
 }

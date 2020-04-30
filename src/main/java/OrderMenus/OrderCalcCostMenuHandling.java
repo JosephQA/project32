@@ -24,11 +24,11 @@ Factory f = new Factory();
 
 	protected Order_ handleMenuIntput(int intput) {
 		Order_ retOrder;
-		ordhan = f.getOrderHandler();
+//		ordhan = f.getOrderHandler();
 		if (intput != -0) {
 			// actually DB.getOrder(orderID) //syso(no order found on fail?? and return null
 
-			retOrder = ordhan.getOrderbyId(intput);
+			retOrder = getOrder(intput);//ordhan.getOrderbyId(intput);
 
 		} else {
 			// upmenu.upmenu.displayMenu();
@@ -42,12 +42,24 @@ Factory f = new Factory();
 		// int cost = order.calcCost();
 		// retCost += cost;
 		pricer = 0;
-		linhan = f.getOrderlinehandler();
-		ArrayList<OrderLine_> list = linhan.getLinesbyOrder(order.getOrderId());
+//		linhan = f.getOrderlinehandler();
+		ArrayList<OrderLine_> list = getList(order);//linhan.getLinesbyOrder(order.getOrderId());
 		list.forEach(ele -> {
-			pricer = pricer + linhan.getLinePrice(ele);
+			pricer = pricer + getlinePrice(ele);
 		});
 		
 		return ""+pricer;
+	}
+	protected ArrayList<OrderLine_> getList( Order_ order){
+		linhan = f.getOrderlinehandler();
+		ArrayList<OrderLine_> list = linhan.getLinesbyOrder(order.getOrderId());
+		return list;
+	}
+	protected Order_ getOrder(int intput) {
+		ordhan = f.getOrderHandler();
+		return ordhan.getOrderbyId(intput);
+	}
+	protected  double getlinePrice(OrderLine_ line) {
+		linhan = f.getOrderlinehandler(); return linhan.getLinePrice(line);
 	}
 }
