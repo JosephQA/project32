@@ -14,11 +14,11 @@ public class Customer_HandlingTst {
 	Database_handling dbh;
 	Customer_ tc1, tc2;
 	Customer_Handling csth;
-
+	Factory f  = new Factory();
 	@Before
 	public void befro() {
 
-		dbh = Factory.getDatabaseHandling("test");
+		dbh = f.getDatabaseHandling("test");
 		tc1 = new Customer_(101, "name11", "name21", "emaill1");
 		tc2 = new Customer_(102, "name12", "name22", "emaill2");
 		csth = new Customer_Handling("test");

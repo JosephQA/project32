@@ -2,6 +2,9 @@ package ItemMenus;
 
 import java.util.Scanner;
 
+import InitClass.Factory;
+import logicClasses.Item_Handling;
+
 public class ItemDeletionMenuHandling {
 Scanner scan;
 ItemDeletionMenu upmenu;
@@ -28,9 +31,19 @@ ItemDeletionMenu upmenu;
 			upmenu.displayMenu();
 			break;
 		default:
-			//try to delete item(ID = intput) from DB (set isdeleted == tru)
-			//sysout success/failure msg
+			if(deleteitem(intput)) {
+				upmenu.success(intput);upmenu.displayMenu();break;
+			}else {
+				upmenu.fail();upmenu.displayMenu();
+			}
 			break;
 		}
+	}
+	protected boolean deleteitem(int intput) {
+		Factory f = Factory.getFactory();
+		Item_Handling ih = f.getItemHandler();
+		boolean bool = ih.deleteItem(intput);
+		return bool;
+		
 	}
 }

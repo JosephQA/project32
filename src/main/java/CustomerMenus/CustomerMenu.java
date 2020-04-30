@@ -17,7 +17,7 @@ public class CustomerMenu {
 				+ "1 : create a customer\n"
 				+ "2 : delete a customer\n"
 				+ "3 : change a customers details\n"
-				+ "4 : view all customers\n"
+				+ "4 : view customers\n"
 				+ "9 : recover a customer ( requires Customer ID# )\n"
 				+ "0 : return to main menu" );
 		System.out.println(menuString);

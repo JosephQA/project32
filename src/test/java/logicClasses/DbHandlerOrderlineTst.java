@@ -12,10 +12,14 @@ import enums.OrderLineFields;
 
 public class DbHandlerOrderlineTst {
 	Database_handling dbh;
+	Factory f  = new Factory();
 	@Before
 	public void seup() {
-	System.out.println("_________setup____________");
-	dbh = Factory.getDatabaseHandling("test");
+		
+		System.out.println("_________setup____________");
+		dbh = f.getDatabaseHandling("test");
+			
+		
 	System.out.println("check "+ !(null == dbh));
 	Database_ db = dbh.getDatabase();
 	System.out.println(db.suffix);

@@ -15,11 +15,12 @@ public class OrderLine_HandlerTst {
 	Item_ item = new Item_("testItem", 101, 500, 32.54);
 	Order_ ord = new Order_(101, 101);
 	Customer_ cust = new Customer_(101, "name1", "name2", "emaill");
+	Factory fact = new Factory();
 	@Before
 	public void befro() {
 		System.out.println("_______SETUP ORDDERLINE_______");
-		olh = Factory.getOrderlinehandler("test");
-		dbh = Factory.getDatabaseHandling("test");
+		olh =  fact.getOrderlinehandler("test");
+		dbh =  fact.getDatabaseHandling("test");
 		System.out.println("check "+ !(null == dbh));
 		System.out.println("create cust");
 		dbh.createCust(cust.getId(), cust.getFirstname(), cust.getLastname(), cust.getEmail());

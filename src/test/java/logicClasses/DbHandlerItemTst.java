@@ -10,13 +10,13 @@ import InitClass.Factory;
 import enums.ProductFields;
 
 public class DbHandlerItemTst {
-
+	Factory f  = new Factory();
 	Database_handling dbh;
 	@Before
 	public void seup() {
-	System.out.println("_________setup____________");
-	dbh = Factory.getDatabaseHandling("test");
-	System.out.println("check "+ !(null == dbh));
+		System.out.println("_________setup____________");
+		dbh = f.getDatabaseHandling("test");
+		System.out.println("check "+ !(null == dbh));
 	Database_ db = dbh.getDatabase();
 	System.out.println(db.suffix);
 	dbh.createFullItem(101, "qqq", 87, 10.50);
@@ -50,6 +50,11 @@ public class DbHandlerItemTst {
 	public void deleteItem() {
 		System.out.println("________DELETE ITEM____________");
 		assertEquals(true, dbh.deleteItem(101));
+		System.out.println("________________________________");
+	}
+	@Test public void getallitem() {
+		System.out.println("__________GET ALL ITEM___________");
+		assertEquals(1,dbh.getAllItems().size());
 		System.out.println("________________________________");
 	}
 }

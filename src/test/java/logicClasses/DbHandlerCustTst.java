@@ -14,7 +14,7 @@ import InitClass.Factory;
 import enums.CustFields;
 
 public class DbHandlerCustTst {
-	
+	Factory f  = new Factory();
 	// Database_ mdb;
 	
 	// Factory mFactory;
@@ -33,8 +33,8 @@ public class DbHandlerCustTst {
 		//mdb = mock(Database_.class);
 //		Factory = mock(Factory.class);
 		//when(Factory.getDatabase_("test")).thenReturn(mdb);
-		//when(Database_handling.getDatabase()).thenReturn(mdb);
-		dbh = Factory.getDatabaseHandling("test");
+	//when(Database_handling.getDatabase()).thenReturn(mdb);
+	dbh = f.getDatabaseHandling("test");
 		System.out.println("check "+ !(null == dbh));
 		Database_ db = dbh.getDatabase();
 		System.out.println(db.suffix);

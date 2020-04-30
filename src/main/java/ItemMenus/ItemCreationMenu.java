@@ -29,13 +29,22 @@ public class ItemCreationMenu {
 		System.out.println(msg);
 		System.out.println("Enter item name:");
 		String itemName = scan.next();
-		System.out.println("Enter item type:"); //enumeration here??
-		String itemType = scan.next();
-		System.out.println("Enter sale price per item:");
+//		System.out.println("Enter item type:"); //enumeration here??
+//		String itemType = scan.next();
+		System.out.println("Enter sale price per item: (XX.yy)");
 		double itemSalePrice = scan.nextDouble();
-		System.out.println("enter number of items tp add");
+		System.out.println("enter number of items to add");
 		int itemAmount = scan.nextInt();
-		handler.handleAddingItem(itemName,itemType,itemSalePrice,itemAmount);
+		handler.handleAddingItem(itemName/*,itemType*/,itemSalePrice,itemAmount);
+		displayMenu();
+	}
+	public void success(String string) {
+		System.out.println("ITEM "+string+" CREATED");
+		
+	}
+	public void fail() {
+		System.out.println("item creation failure, please retry with valid inputs");
+		
 	}
 
 }

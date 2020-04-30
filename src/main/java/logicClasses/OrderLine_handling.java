@@ -7,12 +7,12 @@ import enums.OrderLineFields;
 
 public class OrderLine_handling {
 	Database_handling dbh;
-
+Factory f = Factory.getFactory();
 	public OrderLine_handling(String str) {
-		dbh = Factory.getDatabaseHandling(str);
+		dbh = f.getDatabaseHandling(str);
 	}
 	public OrderLine_handling() {
-		dbh = Factory.getDatabaseHandling();
+		dbh = f.getDatabaseHandling();
 	}
 
 	public double getLinePrice(OrderLine_ line) {

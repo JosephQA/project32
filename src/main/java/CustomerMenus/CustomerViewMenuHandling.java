@@ -1,11 +1,17 @@
 package CustomerMenus;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import InitClass.Factory;
+import logicClasses.Customer_;
+import logicClasses.Customer_Handling;
 
 public class CustomerViewMenuHandling {
 	Scanner scan;
-	CustomerMenu upmenu;
-	CustomerViewMenuHandling(Scanner scanIn,CustomerMenu obj){
+	String longstr ="";
+	CustomerViewMenu upmenu;
+	CustomerViewMenuHandling(Scanner scanIn,CustomerViewMenu obj){
 		scan = scanIn;
 		upmenu = obj;
 	}
@@ -16,30 +22,55 @@ public class CustomerViewMenuHandling {
 			int idNo = scan.nextInt();
 			if(idNo != -0) {
 				//fetch customer and show details
-				startSingleFetch(idNo);
-				viewmenu.startViewing();
-			}else {viewmenu.startViewing();}
+				String stri =startSingleFetch(idNo);
+				upmenu.success(stri);
+				//viewmenu.startViewing();
+				upmenu.startViewing();
+			}else {upmenu.startViewing();}
 			break;
 		case 2:
-			startAllFetch(); 
+			String stre = getallcustString(); 
+			upmenu.success(stre);
 			//fetch all customers from DB
 			//display all custmers
-			viewmenu.startViewing();
+			upmenu.startViewing();
 			break;
-		case 0: upmenu.displaymenu(); break;
+		case 0: upmenu.upmenu.displaymenu(); break;
 		
-		default: upmenu.displaymenu(); break;
+		default: upmenu.startViewing(); break;
 		}
 	}
-	void startSingleFetch(int custID){
+	String startSingleFetch(int custID){
 		//check if exists ( true::sysout("this id "+idNo+" doesnotexist")
 		//fetch from db
 		//cast and print values
+		String str  =getcustString(custID);
+		return str;
 	}
-	void startAllFetch() {
-		//get all custs that are not "deleted"
-		//cast to Customer_ and add to a List<Customer_>
-		//print list values ....(format??)
+	private String getcustString(int custID) {
+		Customer_Handling csth = getcusthan();
+		Customer_ cst = csth.getCustomer(custID);
+		if(cst!=null) {
+			return cst.toString();
+		}else {return "NOT FOUND";}
+		
 	}
+	private String getallcustString() {
+		ArrayList<Customer_> cstarr = startAllFetch();
+		if(cstarr.isEmpty()) {return "NONE FOUND";}
+		cstarr.forEach(ele-> {longstr = longstr+ele.toString();});
+		return longstr;
+	}
+	ArrayList<Customer_> startAllFetch() {
+		Customer_Handling csth = getcusthan();
+		ArrayList<Customer_> cstarr = csth.getAllCusts();
+		return cstarr;
+	}
+	private Customer_Handling getcusthan() {
+		Factory f = Factory.getFactory();
+		Customer_Handling csth = f.getCustomerHandler();
+		return csth;
+	}
+	
 	
 }

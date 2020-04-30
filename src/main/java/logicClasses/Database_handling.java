@@ -16,6 +16,7 @@ import enums.TableNames;
 public class Database_handling {
 	private Database_ db;
 	private String istest = "";
+	Factory f = Factory.getFactory();
 	public Database_handling(String tst) {
 		istest = tst;
 		db = getDatabase();
@@ -25,7 +26,7 @@ public class Database_handling {
 		Scanner scanIn = ScannerHandling.getScanner();
 		
 		if (db == null || !db.checkConnection()) { // if db not init or connectino has dropped get a new db
-			db = Factory.getDatabase_(istest);
+			db = f.getDatabase_(istest);
 		}
 		
 		return db;
@@ -194,11 +195,12 @@ public class Database_handling {
 
 	protected double getLinePrice(int itemId) {
 		//db = getDatabase();
+//		System.out.println("++TEST++pricedb:");
 		ResultSet rs = db.getFieldItemsById(ProductFields.PRICE, ProductFields.ID, "" + itemId);
 		try {
 			rs.next();
 			double cost = rs.getDouble(1);
-			//System.out.println("++TEST++pricedb:"+cost);
+//			System.out.println("++TEST++pricedb:"+cost);
 			return cost;
 		} catch (SQLException e) {
 			e.printStackTrace();

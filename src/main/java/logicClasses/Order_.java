@@ -34,7 +34,7 @@ public class Order_ {
 		}
 	}
 
-	protected boolean addOrderLine(OrderLine_ line) {
+	public boolean addOrderLine(OrderLine_ line) {
 		try {
 			lines.add(line);
 			return true;
@@ -44,7 +44,7 @@ public class Order_ {
 		}
 	}
 
-	protected ArrayList<OrderLine_> getLines() {
+	public ArrayList<OrderLine_> getLines() {
 		return lines;
 	}
 
@@ -53,7 +53,7 @@ public class Order_ {
 		
 		lines.forEach(ele -> {
 			ele.setLinePrice();
-			price = ele.getLinePrice();
+			price = price +ele.getLinePrice();
 		});
 
 		return price;
@@ -72,6 +72,14 @@ public class Order_ {
 	}
 	public double getPrice() {
 		return price;
+	}
+	@Override
+	public String toString() {
+		String str = "";
+		this.calcPrice();
+		str+= "\nORDER: "+getOrderId()+" CUST: "+getCustId()+" COST: "+getPrice()+"\n";
+		
+		return str;
 	}
 
 }

@@ -7,11 +7,14 @@ import enums.ProductFields;
 
 public class Item_Handling {
 	private static Database_handling dbh;
+	Factory f = Factory.getFactory();
 	public Item_Handling() {
-		dbh = Factory.getDatabaseHandling("");
+		dbh =f.getDatabaseHandling("");
+		
+		
 	}
 	public Item_Handling(String tst) {
-		dbh = Factory.getDatabaseHandling(tst);
+		dbh = f.getDatabaseHandling(tst);
 	}
 //creaett
 	public Item_ createIteminDB(int itemID,String name ,int amount,double price ) {
@@ -36,5 +39,9 @@ public class Item_Handling {
 //DElete
 	public boolean deleteItem(int iD) {
 		return dbh.deleteItem(iD);
+	}
+	public ArrayList<Item_> getAllItems() {
+		
+		return dbh.getAllItems();
 	}
 }

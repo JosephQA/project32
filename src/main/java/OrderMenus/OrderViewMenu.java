@@ -19,7 +19,7 @@ public class OrderViewMenu {
 		System.out.println(msg);
 		int choice = scan.nextInt();
 		handler.handleMenuInput(choice);
-		upmenu.displayMenu();
+		//upmenu.displayMenu();
 	}
 
 	protected void viewOne() {

@@ -25,11 +25,12 @@ public class OrderCreationMenu {
 	}
 
 	void beginCreation() {
-		String msg = "please enter CustmerID associated with this Order\n" + "or \"-0\" to return to creation menu";
+		String msg = "please enter CustmerID associated with this Order\n" + "or \"0\" to return to creation menu";
 		System.out.println(msg);
 		Order_ newOrder;
+		scan.hasNextLine();
 		int choice = scan.nextInt();
-		if (choice != -0) {
+		if (choice != 0) {
 			newOrder = handler.processcustIdIn(choice);
 			// sysout(" order "+newOrder.getId()+" Created, now begingin to add items to
 			// order...");
@@ -44,11 +45,14 @@ public class OrderCreationMenu {
 		// error intentional
 		System.out
 				.println("enter itemID# to add to order \n  or \"-0\" to return to creation menu and discard creation");
+		scan.nextLine();
 		int itemID = scan.nextInt();
+		if(itemID == 0 || itemID==-0) {return false;}
 		System.out.println("enter amount of items of " + itemID
 				+ " to add to order\n or \"-0\" to return to creation menu and discard creation ");
+		scan.nextLine();
 		int itemAmo = scan.nextInt();
-
+		if(itemAmo == 0 || itemAmo==-0) {return false;}
 		if (handler.checkItem(itemID, itemAmo)) {// check if item and amo exists in DB // msg
 			// Order.addItem( ........) //handle item creation (?????and db update of item
 			// amo here?????)
@@ -58,7 +62,7 @@ public class OrderCreationMenu {
 		} else if (itemID == -0 || itemAmo == -0) {
 			return false; //exit condition
 		} // retry item input
-		addItemstoOrder(orderHead);
-		return true; //unreachable code required???
+		//addItemstoOrder(orderHead);
+		return true; 
 	}
 }
