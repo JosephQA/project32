@@ -33,7 +33,7 @@ public void testviewonw() {
 	Mockito.when(ivmhM.getitem(Matchers.anyInt())).thenReturn(i1);
 	Mockito.when(ivmhM.handleViewOne(Matchers.anyInt())).thenCallRealMethod();
 	String itemstr = "Name: "+i1.getItemName()+
-			"\nID  : "+i1.getItemId()+
+			"\nID  : "+i1.getItemId()+ //TODO rewirte
 			"\ncost: "+i1.getItemPrice()+"\n";
 	assertEquals(itemstr, ivmhM.handleViewOne(12));
 }
@@ -45,3 +45,4 @@ public void testviewall() {
 	assert(2 == ivmhM.handleViewAll().size());
 }
 }
+

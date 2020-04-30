@@ -16,7 +16,7 @@ import enums.TableNames;
 public class Database_handling {
 	private Database_ db;
 	private String istest = "";
-	Factory f = new Factory();
+	Factory f = Factory.getFactory();
 	public Database_handling(String tst) {
 		istest = tst;
 		db = getDatabase();
