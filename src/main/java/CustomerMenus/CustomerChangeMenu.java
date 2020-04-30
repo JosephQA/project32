@@ -41,9 +41,9 @@ public class CustomerChangeMenu {
 	}
 
 	void continueChanging(Customer_ cust) {
-		String msg = "select customer value to change" + "1 : first name"  + cust.getFirstname()
-				+ "\n2 : last name"  +cust.getLastname()
-				+ "\n3 : email address" +cust.getEmail()
+		String msg = "select customer value to change" + "\n1 : first name _ "  + cust.getFirstname()
+				+ "\n2 : last name _ "  +cust.getLastname()
+				+ "\n3 : email address _ " +cust.getEmail()
 				+ "\n0 : abort changing details";
 
 		System.out.println(msg);

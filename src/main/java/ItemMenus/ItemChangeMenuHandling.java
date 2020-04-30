@@ -54,6 +54,7 @@ public class ItemChangeMenuHandling {
 		switch (intput) {
 		case 1:
 			System.out.println("enter new Item name \n");
+			scan.nextLine();
 			String newName = scan.nextLine();
 			// try changeItem.setName(newName); updating DB
 			if (changeName(newName, changeItem) != null) {
@@ -61,10 +62,12 @@ public class ItemChangeMenuHandling {
 			} else {
 				upmenu.fail();
 			}
-			// upmenu.continueChanging(changeItem);
+			 upmenu.continueChanging(changeItem);
+			//upmenu.displayMenu();
 			break;
 		case 2:
 			System.out.println("enter new amount");
+			scan.nextLine();
 			int newAmo = scan.nextInt();
 			// try changeItem.setAmount(newAmo); updating DB
 			if (changeAmount(newAmo, changeItem) != null) {
@@ -72,10 +75,12 @@ public class ItemChangeMenuHandling {
 			} else {
 				upmenu.fail();
 			}
-			// upmenu.continueChanging(changeItem);
+			 upmenu.continueChanging(changeItem);
+			//upmenu.displayMenu();
 			break;
 		case 3:
 			System.out.println("enter new cost per item");
+			scan.nextLine();
 			double newCostPI = scan.nextDouble();
 			// try changeItem.setCostPI(newCostPI); updating DB
 			// upmenu.continueChanging(changeItem);
@@ -84,6 +89,8 @@ public class ItemChangeMenuHandling {
 			} else {
 				upmenu.fail();
 			}
+			upmenu.continueChanging(changeItem);
+			//upmenu.displayMenu();
 			break;
 		case 0:
 			upmenu.upmenu.displaymenu();
@@ -91,6 +98,7 @@ public class ItemChangeMenuHandling {
 		default:
 			System.out.println("enter valid number of choice(1,2,3 or 0)");
 			// upmenu.continueChanging(changeItem);
+			upmenu.displayMenu();
 			break;
 
 		}

@@ -42,7 +42,7 @@ public class Customer_ {
 	}
 	@Override
 	public String toString() {
-		String str = "ID: "+getId()+" NAME:"+getFirstname()+" "+getLastname()+" EMAIL"+getEmail()+"\n";
+		String str = "ID:  "+getId()+" NAME: "+getFirstname()+" "+getLastname()+"  EMAIL: "+getEmail()+"\n";
 		return str;
 	}
 

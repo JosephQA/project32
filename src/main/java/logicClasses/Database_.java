@@ -203,7 +203,7 @@ public class Database_ {
 		try {// adding cust
 			String qry = "insert into " + TableNames.CUSTOMERS.getFeild() + " values(0," + textSorS + name1 + textComma
 					+ name2 + textComma + email + textSorS + comma + "0);";
-			System.out.println(qry);
+			//System.out.println(qry);
 			return execute(qry);
 		} catch (Exception e) {
 			return false;
@@ -481,11 +481,11 @@ public class Database_ {
 	// select int from table
 	protected int selectInt(String qry, String col) {
 		ResultSet rs;// = executeQuery(qry);
-		System.out.println("++TEST++"+qry);
+		//System.out.println("++TEST++"+qry);
 		int result;
 		try {
 			rs = executeQuery(qry);
-			System.out.println(qry);
+			//System.out.println(qry);
 			rs.next();
 			// System.out.println(rs);
 			result = rs.getInt(col);
@@ -504,7 +504,7 @@ public class Database_ {
 		String result;
 		try {
 			rs = executeQuery(qry);
-			System.out.println(qry);
+			//System.out.println(qry);
 			rs.next();
 			// System.out.println(rs);
 			result = rs.getString(col);
@@ -523,7 +523,7 @@ public class Database_ {
 		boolean result;
 		try {
 			rs = executeQuery(qry);
-			System.out.println(qry);
+			//System.out.println(qry);
 			rs.next();
 			// System.out.println(rs);
 			result = rs.getBoolean(col);
@@ -542,7 +542,7 @@ public class Database_ {
 		double result;
 		try {
 			rs = executeQuery(qry);
-			System.out.println(qry);
+			//System.out.println(qry);
 			rs.next();
 			// System.out.println(rs);
 			result = rs.getDouble(col);
@@ -563,7 +563,7 @@ public class Database_ {
 
 	private boolean execute(String qry) {
 		try {
-			System.out.println(qry);
+			//System.out.println(qry);
 			stmnt.execute(qry);
 
 			return true;
@@ -578,7 +578,7 @@ public class Database_ {
 		ResultSet rs;
 		try {
 			rs = stmnt.executeQuery(qry);
-			System.out.println(qry);
+			//System.out.println(qry);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

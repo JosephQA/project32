@@ -79,11 +79,11 @@ public class Factory {
 
 	public  Database_handling getDatabaseHandling(String tst) {
 		//if(tst == "test") { dbh = new TestBase_Handling();return dbh; }
-		if (dbh != null) { System.out.println("--TEST--");
+		if (dbh != null) {// System.out.println("--TEST--");
 			return dbh;
 		} else {
 			dbh = new Database_handling(tst);
-			System.out.println("---TEST---");
+			//System.out.println("---TEST---");
 			return dbh;
 		}
 	}

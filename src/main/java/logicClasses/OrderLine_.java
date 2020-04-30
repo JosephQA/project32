@@ -58,6 +58,7 @@ Factory f = new Factory();
 	}
 
 	public double getLinePrice() {
+		setLinePrice();
 		return linePrice;
 	}
 

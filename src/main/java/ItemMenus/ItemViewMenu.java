@@ -27,6 +27,7 @@ public class ItemViewMenu {
 		System.out.println(msg);
 		int choice = scan.nextInt();
 		System.out.println(handler.handleViewOne(choice));
+		
 	}
 
 	void viewAll() {
@@ -35,5 +36,6 @@ public class ItemViewMenu {
 		itemList.forEach(ele -> {
 			System.out.println(ele);
 		});
+		
 	}
 }

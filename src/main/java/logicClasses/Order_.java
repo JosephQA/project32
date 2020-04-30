@@ -34,7 +34,7 @@ public class Order_ {
 		}
 	}
 
-	protected boolean addOrderLine(OrderLine_ line) {
+	public boolean addOrderLine(OrderLine_ line) {
 		try {
 			lines.add(line);
 			return true;
@@ -44,7 +44,7 @@ public class Order_ {
 		}
 	}
 
-	protected ArrayList<OrderLine_> getLines() {
+	public ArrayList<OrderLine_> getLines() {
 		return lines;
 	}
 

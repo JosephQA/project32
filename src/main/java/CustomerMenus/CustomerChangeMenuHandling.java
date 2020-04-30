@@ -30,21 +30,23 @@ public class CustomerChangeMenuHandling {
 		switch (intput) {
 		case 1:
 			System.out.println("enter new First Name:");
+			scan.nextLine(); System.out.println("");
 			String name = scan.nextLine();
 			chan = csth.updateCust(cust, CustFields.NAME1, name);
 			if (chan != null) {
-				System.out.println("customer updated: " + (chan.getFirstname() == cust.getFirstname()));
+				System.out.println("customer updated: " + (cust.getFirstname()!= chan.getFirstname()));
 //	 			System.out.println("success??");		 		
 			} else {
 				System.out.println("Customer not found in DB");
 			}
 			break;
 		case 2:
-			System.out.println("enter new Last Name:");
+			System.out.println("enter new Last Name:\n");
+			scan.nextLine();
 			String nameL = scan.nextLine();
-			csth.updateCust(cust, CustFields.NAME2, nameL);
+			chan =csth.updateCust(cust, CustFields.NAME2, nameL);
 			if (chan != null) {
-				System.out.println("customer updated: " + (chan.getLastname() == cust.getLastname()));
+				System.out.println("customer updated: " + (cust.getLastname()!= chan.getLastname()));
 // 			System.out.println("success??");
 			} else {
 				System.out.println("Customer not found in DB");
@@ -52,11 +54,11 @@ public class CustomerChangeMenuHandling {
 			break;
 
 		case 3:
-			System.out.println("enter new email:");
+			System.out.println("enter new email:\n");scan.nextLine();
 			String email = scan.nextLine();
-			csth.updateCust(cust, CustFields.EMAIL, email);
+			chan =csth.updateCust(cust, CustFields.EMAIL, email);
 			if (chan != null) {
-				System.out.println("customer updated: " + (chan.getEmail() == cust.getEmail()));
+				System.out.println("customer updated: " + ( cust.getEmail()!= chan.getEmail()));
 // 			System.out.println("success??");
 			} else {
 				System.out.println("Customer not found in DB");

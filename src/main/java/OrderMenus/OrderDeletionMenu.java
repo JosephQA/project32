@@ -14,7 +14,7 @@ public class OrderDeletionMenu {
 	public void displayMenu() {
 		String msg = "this is the order Deletion Menu\n"
 				+ "enter number of option to continue\n"
-				+ "1 : delete an item with its itemID#\n"
+				+ "1 : delete an order with its orderID#\n"
 				+ "0 : return to Order menu";
 				System.out.println(msg);
 		int choice = scan.nextInt();
@@ -22,7 +22,7 @@ public class OrderDeletionMenu {
 		
 	}
 	protected void beginDeletion() {
-		String msg = "enter Itemid# or \"-0\" to return\n";
+		String msg = "enter orderid# or \"-0\" to return\n";
 		System.out.println(msg);
 		int choice = scan.nextInt();
 		handler.handleDeleteInput(choice);

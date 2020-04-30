@@ -195,11 +195,12 @@ public class Database_handling {
 
 	protected double getLinePrice(int itemId) {
 		//db = getDatabase();
+//		System.out.println("++TEST++pricedb:");
 		ResultSet rs = db.getFieldItemsById(ProductFields.PRICE, ProductFields.ID, "" + itemId);
 		try {
 			rs.next();
 			double cost = rs.getDouble(1);
-			//System.out.println("++TEST++pricedb:"+cost);
+//			System.out.println("++TEST++pricedb:"+cost);
 			return cost;
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -19,8 +19,9 @@ ItemViewMenu upmenu;
 	void handleMenuInput(int intput) {
 		switch(intput) {
 		case 1: upmenu.viewOne();
+			upmenu.displayMenu();
 			break;
-		case 2: upmenu.viewAll();
+		case 2: upmenu.viewAll();upmenu.displayMenu();
 			break;
 		case 0:
 			upmenu.upmenu.displaymenu();
@@ -36,10 +37,9 @@ ItemViewMenu upmenu;
 		if(intput != -0) {
 //			singleItem = Item.fromID(intput); / DB.itemfromID(intput);
 			singleItem = getitem(intput);//new Item_(); //delete line later
-		    msg ="Name: "+singleItem.getItemName()+
-			"\nID  : "+singleItem.getItemId()+
-			"\ncost: "+singleItem.getItemPrice()+"\n";
-			
+		   if(singleItem != null) {
+			msg =singleItem.toString();
+		   }else {msg = "not a valid/existing item ID";}
 			
 		}else { msg = "returning...\n" ;}
 		return msg;
@@ -52,9 +52,7 @@ ItemViewMenu upmenu;
 		ArrayList<Item_> itemArr = getallitems();
 		itemArr.forEach( ele ->{   
 			String msg = "";
-			 msg ="Name: "+ele.getItemName()+
-						"\nID  : "+ele.getItemId()+
-						"\ncost: "+ele.getItemPrice()+"\n";
+			 msg =ele.toString();
 			 msgArrL.add(msg);
 		} );
 		

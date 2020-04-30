@@ -30,16 +30,17 @@ public class CustomerMenuHandling {
 			//do that
 			CustomerChangeMenu custChg = new CustomerChangeMenu(scan, upmenu);
 			custChg.startChanging();
-			upmenu.displaymenu();
+			//upmenu.displaymenu();
 			break;
 		case 4: System.out.println("you want to view all customers\n");
 		//do that
 		CustomerViewMenu custView = new CustomerViewMenu(scan, upmenu);
 		custView.startViewing();
-			upmenu.displaymenu();
+			//upmenu.displaymenu();
 			break;
 		case 9: System.out.println("you want to recover a customer with their ID\n");
 		//do that
+			System.out.println("this is not yet implemented");
 			upmenu.displaymenu();
 			break;
 		case 0: System.out.println("exiting customer menu \n");

@@ -31,9 +31,9 @@ public class ItemCreationMenu {
 		String itemName = scan.next();
 //		System.out.println("Enter item type:"); //enumeration here??
 //		String itemType = scan.next();
-		System.out.println("Enter sale price per item:");
+		System.out.println("Enter sale price per item: (XX.yy)");
 		double itemSalePrice = scan.nextDouble();
-		System.out.println("enter number of items tp add");
+		System.out.println("enter number of items to add");
 		int itemAmount = scan.nextInt();
 		handler.handleAddingItem(itemName/*,itemType*/,itemSalePrice,itemAmount);
 		displayMenu();

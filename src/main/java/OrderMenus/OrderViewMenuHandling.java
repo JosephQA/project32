@@ -23,10 +23,10 @@ Factory f;
 	protected void handleMenuInput(int intput){
 		switch(intput) {		
 		case 1:
-			upmenu.viewOne();
+			upmenu.viewAll();upmenu.displayMenu();
 			break;
 		case 2:
-			upmenu.viewAll();
+			upmenu.viewOne();upmenu.displayMenu();
 			break;
 		case 0: upmenu.upmenu.displayMenu();
 			break;
@@ -45,7 +45,7 @@ Factory f;
 ////		System.out.println("++TEST++");
 	Order_ ordHead = gethead(orderID);
 //		System.out.println("++TEST++");
-		ArrayList<OrderLine_> ordlinArr = setuphandleviewone(orderID);
+		ArrayList<OrderLine_> ordlinArr = ordHead.getLines();//setuphandleviewone(orderID);
 //		System.out.println("++TEST++");
 		retStr = retStr + ordHead.toString()+"\n";
 		for(OrderLine_ ele: ordlinArr) {
@@ -58,6 +58,11 @@ Factory f;
 		Order_Handling ordHan = f.getOrderHandler();
 //		System.out.println("++TEST++");
 		Order_ ordHead = ordHan.getOrderbyId(orderID);
+		ArrayList<OrderLine_> wone = setuphandleviewone(orderID);
+		for(int i = 0;i<wone.size();i++) {
+			wone.get(i).getLinePrice();
+			ordHead.addOrderLine(wone.get(i));
+		}
 		return ordHead;
 	}
 	protected ArrayList<OrderLine_> setuphandleviewone(int orderID){
@@ -79,13 +84,23 @@ Factory f;
 		ArrayList<OrderLine_> linArr = new ArrayList<OrderLine_>();
 		String ordNlinStr = "";
 		for(Order_ order:ordArr) {
-			ordNlinStr = ""+order.toString()+"\n";
-			linArr.clear();
-			
-			linArr = getlinarr(linhan, order.getOrderId());
+			linArr.clear(); ordNlinStr ="";
+			linArr = setuphandleviewone(order.getOrderId());
+			for(int i = 0;i<linArr.size();i++) { 
+				linArr.get(i).getLinePrice();
+				order.addOrderLine(linArr.get(i));
+			}
+			ordNlinStr = order.toString();
 			for(OrderLine_ ele: linArr) {
 				ordNlinStr = ordNlinStr + ele.toString()+"\n";
 			}
+//			ordNlinStr = ""+order.toString()+"\n";
+//			linArr.clear();
+//			
+//			linArr = gethead(order.getOrderId()).getLines();//getlinarr(linhan, order.getOrderId());
+//			for(OrderLine_ ele: linArr) {
+//				ordNlinStr = ordNlinStr + ele.toString()+"\n";
+			
 			retArr.add(ordNlinStr);
 		}
 		

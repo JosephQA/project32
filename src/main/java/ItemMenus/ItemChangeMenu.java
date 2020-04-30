@@ -24,14 +24,14 @@ ItemChangeMenuHandling handler;
 	void continueChanging(Item_ changeItem) {
 		String msg =" changing Item " +changeItem.getItemId()
 				+ "\n enter number of option to continue\n"
-				+ "1 : change Item name _\n"+ changeItem.getItemName()
-				+ "2 : change Item amount _ \n"+ changeItem.getItemAmo()
-				+ "3 : change Item cost per item _ \n"+changeItem.getItemPrice()
-				+ "0 : return to item menu";
+				+ "1 : change Item name _"+ changeItem.getItemName()
+				+ "\n2 : change Item amount _ "+ changeItem.getItemAmo()
+				+ "\n3 : change Item cost per item _ "+changeItem.getItemPrice()
+				+ "\n0 : return to item menu";
 		System.out.println(msg);
 		int choice = scan.nextInt();
 		handler.handleChangeItem(choice, changeItem);
-		continueChanging(changeItem);
+		//continueChanging(changeItem);
 	}
 	public void noItem() {
 		System.out.println("the item ID input is not found in the database\ncheck existence and retry");

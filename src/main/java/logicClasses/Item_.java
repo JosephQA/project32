@@ -60,5 +60,11 @@ public class Item_ {
 	protected void setItemPrice(double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
+	@Override
+	public String toString() {
+		String str = "";
+		str = str + "ID: "+getItemId()+" NAME: "+getItemName()+" AMOUNT: "+getItemAmo()+" PRICE: "+getItemPrice()+"\n";
+		return str;
+	}
 
 }

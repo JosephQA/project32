@@ -24,15 +24,16 @@ public class CustomerViewMenuHandling {
 				//fetch customer and show details
 				String stri =startSingleFetch(idNo);
 				upmenu.success(stri);
-				viewmenu.startViewing();
-			}else {viewmenu.startViewing();}
+				//viewmenu.startViewing();
+				upmenu.startViewing();
+			}else {upmenu.startViewing();}
 			break;
 		case 2:
 			String stre = getallcustString(); 
 			upmenu.success(stre);
 			//fetch all customers from DB
 			//display all custmers
-			viewmenu.startViewing();
+			upmenu.startViewing();
 			break;
 		case 0: upmenu.upmenu.displaymenu(); break;
 		

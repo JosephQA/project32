@@ -15,24 +15,25 @@ public class ItemMenuHandling {
 				//do that
 				ItemCreationMenu itemCreate = new ItemCreationMenu(scan,upMenu);
 				itemCreate.displayMenu();
-				upMenu.displaymenu();
+				//upMenu.displaymenu();
 				break;
 		case 2:System.out.println("you want to delete an item");
 		 		//do that
 				ItemDeletionMenu itemDelete = new ItemDeletionMenu(scan, upMenu);
 				itemDelete.displayMenu();
-				upMenu.displaymenu();
+			//	upMenu.displaymenu();
 				break;
 		case 3:System.out.println("you want to change an item");
 		 		//do that
 				ItemChangeMenu itemChange = new ItemChangeMenu(scan, upMenu);
 				itemChange.displayMenu();
-				upMenu.displaymenu();
+			//	upMenu.displaymenu();
 				break;
 		case 4:System.out.println("you want to view all items");
 		       //do that
 				ItemViewMenu itemView = new ItemViewMenu(scan, upMenu);
-				upMenu.displaymenu();
+				itemView.displayMenu();
+			//	upMenu.displaymenu();
 				break;
 		case 9:System.out.println("you want to recover an item with its ID#");
 		  		//do that
