@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>project32</groupId>
 	<artifactId>project32</artifactId>
-	<version>0.0.1-RELEASE</version>
+	<version>0.0.3-RELEASE</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -61,8 +61,8 @@
 	</dependencies>
 	<distributionManagement>
 		<repository>
-			<id>savannah</id>
-			<url>http://34.89.85.64/nexus/repository/maven-releases/</url>
+			<id>localnexus</id>
+			<url>http://localhost:8081//repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
 	<build>
@@ -99,8 +99,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<serverId>savannah</serverId>
-					<nexusUrl>http://34.89.85.64/nexus/repository/maven-releases/</nexusUrl>
+					<serverId>localnexus</serverId>
+					<nexusUrl>http://localhost:8081//repository/maven-releases/</nexusUrl>
 					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
