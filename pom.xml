@@ -4,19 +4,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>project32</groupId>
 	<artifactId>project32</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-RELEASE</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.junit.jupiter</groupId> -->
-<!-- 			<artifactId>junit-jupiter-api</artifactId> -->
-<!-- 			<version>5.0.0-M5</version> -->
-<!-- 			<scope>test</scope> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.junit.jupiter</groupId> -->
+		<!-- <artifactId>junit-jupiter-api</artifactId> -->
+		<!-- <version>5.0.0-M5</version> -->
+		<!-- <scope>test</scope> -->
+		<!-- </dependency> -->
 		<!-- <dependency> -->
 		<!-- <groupId>org.apache.commons</groupId> -->
 		<!-- <artifactId>commons-lang3</artifactId> -->
@@ -59,9 +59,15 @@
 
 
 	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>savannah</id>
+			<url>http://34.89.85.64/nexus/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<finalName>${project.name}</finalName>
-<!-- 		<sourceDirectory>src</sourceDirectory> -->
+		<!-- <sourceDirectory>src</sourceDirectory> -->
 		<resources>
 			<resource>
 				<directory>src</directory>
@@ -77,6 +83,25 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.5.1</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<serverId>savannah</serverId>
+					<nexusUrl>http://34.89.85.64/nexus/repository/maven-releases/</nexusUrl>
+					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -114,8 +139,9 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
 
+	</build>
+	
 </project>
 <!-- <build> <sourceDirectory>src</sourceDirectory> <plugins> <plugin> <artifactId>maven-compiler-plugin</artifactId> 
 	<version>3.8.0</version> <configuration> <source>1.8</source> <target>1.8</target> 

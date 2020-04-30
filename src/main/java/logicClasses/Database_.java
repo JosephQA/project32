@@ -45,7 +45,11 @@ public class Database_ {
 			// com.microsoft.sqlserver.jdbc.SQLServerDriver());
 			scanIn = ScannerHandling.getScanner();
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + suffix, scanIn.nextLine(),
+			System.out.println(" enter ip address of sql");
+			
+			String connectto = scanIn.nextLine();
+			System.out.println("enter username, then enter password for DB");
+			conn = DriverManager.getConnection("jdbc:mysql://"+connectto+":3306/" + suffix, scanIn.nextLine(),
 					scanIn.nextLine());
 			stmnt = conn.createStatement();
 			if (conn != null) {
