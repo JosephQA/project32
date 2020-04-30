@@ -16,7 +16,7 @@ public class OrderCreationMenuHandling {
 	Order_ orderInProgress;
 	Order_Handling ordh;
 	OrderLine_handling linh;
-Factory f = new Factory();
+Factory f = Factory.getFactory();
 	public OrderCreationMenuHandling(Scanner scanIn, OrderCreationMenu obj) {
 		scan = scanIn;
 		upmenu = obj;

@@ -7,7 +7,7 @@ import enums.OrderLineFields;
 
 public class OrderLine_handling {
 	Database_handling dbh;
-Factory f = new Factory();
+Factory f = Factory.getFactory();
 	public OrderLine_handling(String str) {
 		dbh = f.getDatabaseHandling(str);
 	}

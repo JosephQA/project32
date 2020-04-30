@@ -7,7 +7,7 @@ import enums.ProductFields;
 
 public class Item_Handling {
 	private static Database_handling dbh;
-	Factory f = new Factory();
+	Factory f = Factory.getFactory();
 	public Item_Handling() {
 		dbh =f.getDatabaseHandling("");
 		

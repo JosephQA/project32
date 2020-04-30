@@ -10,7 +10,7 @@ public class CustomerDeletionMenuHandling {
 	CustomerDeletionMenu upmenu;
 	Scanner scan;
 	Customer_Handling csth;
-	Factory f = new Factory();
+	Factory f =Factory.getFactory();
 	public CustomerDeletionMenuHandling(Scanner scanIn, CustomerDeletionMenu obj) {
 		upmenu = obj;
 		scan = scanIn;

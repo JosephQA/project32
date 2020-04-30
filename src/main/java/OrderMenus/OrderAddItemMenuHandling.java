@@ -11,7 +11,7 @@ import logicClasses.Order_Handling;
 public class OrderAddItemMenuHandling {
 	Scanner scan;
 	OrderAddItemMenu upmenu;
-Factory f = new Factory();
+Factory f = Factory.getFactory();
 	OrderAddItemMenuHandling(Scanner scanIn, OrderAddItemMenu obj) {
 		scan = scanIn;
 		upmenu = obj;

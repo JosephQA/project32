@@ -9,7 +9,7 @@ public class OrderLine_ {
 	private int itemAmo;
 	private double linePrice;
 	private String tst = "";
-Factory f = new Factory();
+Factory f = Factory.getFactory();
 	public OrderLine_(int orderID, int itemID, int itemAMO) {
 		orderId = orderID;
 		itemId = itemID;

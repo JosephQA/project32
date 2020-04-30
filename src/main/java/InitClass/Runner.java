@@ -8,7 +8,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		Scanner scan = ScannerHandling.getScanner();
-		Factory f = new Factory();
+		Factory f = Factory.getFactory();
 		System.out.println("enter username, then enter password for DB");
 		 Database_ db = f.getDatabase_();
 //		 Database_ db = new Database_(scan);

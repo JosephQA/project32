@@ -15,7 +15,7 @@ public class OrderCalcCostMenuHandling {
 	Order_Handling ordhan;
 	OrderLine_handling linhan;
 	double pricer;
-Factory f = new Factory();
+Factory f = Factory.getFactory();
 	public OrderCalcCostMenuHandling(Scanner scanIn, OrderCalcCostMenu obj) {
 		// TODO Auto-generated constructor stub
 		scan = scanIn;

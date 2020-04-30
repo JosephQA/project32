@@ -8,7 +8,7 @@ import logicClasses.Order_Handling;
 public class OrderDeletionMenuHandling {
 	Scanner scan;
 	OrderDeletionMenu upmenu;
-	Factory f = new Factory();
+	Factory f = Factory.getFactory();
 
 	public OrderDeletionMenuHandling(Scanner scanIn, OrderDeletionMenu obj) {
 		scan = scanIn;
